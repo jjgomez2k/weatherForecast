@@ -14,8 +14,7 @@ def fetch_weather(location=None):
     global is_up, last_result, last_ts
     if location is None: 
         location = "Melbourne,Victoria,Australia"    
-    #api_key = os.getenv('OPENWEATHERMAP_API_KEY')
-    api_key = '446e855d59a06479bad6d4036c1fd77b'
+    api_key = os.getenv('OPENWEATHERMAP_API_KEY')
     print(api_key)
     if api_key is None:
         print("OpenWeatherMap API key not specified. Try 'export OPENWEATHERMAP_API_KEY=<Your Key>'")        
