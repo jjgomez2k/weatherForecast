@@ -1,7 +1,7 @@
 import os
 from flask import Flask, escape, request
 from weather_services import openWeatherMap
-
+from flask_cors import CORS
 
 def lookupWeather(location):
     ''' Perform the lookup of weather information across our service '''
@@ -11,10 +11,11 @@ def lookupWeather(location):
           weather = None
       else: 
           weather = openWeatherMap.last_result                  
-      if (weather is None): weather = {'status':'Offline'}
-      return weather
+    if (weather is None): weather = {'status':'Offline'}
+    return weather
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello():
@@ -30,7 +31,8 @@ def getWeather():
 
 def main():
     """Main entry point for server"""
-    hostname = os.getenv('FLASK_HOST')
+    #hostname = os.getenv('FLASK_HOST')
+    hostname = os.getenv('0.0.0.0')
     hostname = '127.0.0.1' if hostname is None else hostname
     print('Running on %s'%(hostname))
     app.run(host=hostname)

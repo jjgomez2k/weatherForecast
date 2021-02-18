@@ -1,8 +1,14 @@
+#Docker image specification for running a Python web service with Flask.
 FROM python:3.9.1
-COPY . /app
+
+RUN apt-get update
+RUN apt-get install -y nginx
+COPY ui /var/www/html
+
+COPY app /app
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 ENV FLASK_HOST=0.0.0.0
-ENV OPENWEATHERMAP_API_KEY=2d854fc549ee9b42e410f6e741eb4b20
-ENTRYPOINT ["python3"]
-CMD ["main.py"]
+ENV OPENWEATHERMAP_API_KEY=446e855d59a06479bad6d4036c1fd77b
+
+CMD nginx && python3 main.py

@@ -8,8 +8,10 @@ python3 -m unittest discover -s ../app -v
 [ $? -eq 0 ]  || exit 1
 
 #Build the ReactJS app
-# coming soon ...
+cd ../ui
+npm build
+cd -
 
 #Build the Docker image
 image="weatherforecast"
-docker build --network=host -t ${image}:latest ../app
+docker build --network=host -t ${image}:latest ..

@@ -1,4 +1,4 @@
-'''' Functions to interact with the OpenWeatherMap service to get the weather'''
+''''Functions to interact with the OpenWeatherMap service to get the weather'''
 import os
 import urllib.request
 import json
@@ -10,12 +10,13 @@ last_ts = None
 is_up = False
 
 def fetch_weather(location=None):
-    """Perform the retrieval of the weather - default location is Guarapari, BR"""
+    """Perform the retrieval of the weather - default location is Melbourne,Victoria,Australia"""
     global is_up, last_result, last_ts
     if location is None: 
         location = "Melbourne,Victoria,Australia"    
-    
-    api_key = os.getenv('OPENWEATHERMAP_API_KEY')
+    #api_key = os.getenv('OPENWEATHERMAP_API_KEY')
+    api_key = '446e855d59a06479bad6d4036c1fd77b'
+    print(api_key)
     if api_key is None:
         print("OpenWeatherMap API key not specified. Try 'export OPENWEATHERMAP_API_KEY=<Your Key>'")        
         return None
