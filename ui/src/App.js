@@ -10,8 +10,8 @@ function App() {
       <header className="App-header">
         
         <h1>
-        <WiDaySunny size={64} color='#FFF' />
-          WeatherForecast
+        <WiDaySunny size={48} color='#FFF' />
+          Weather Forecast
         </h1>
         
       </header>

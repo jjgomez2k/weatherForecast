@@ -59,7 +59,7 @@ class Weather extends React.Component {
   };
 
    getWeather(location) {
-    var weatherURL = `http://127.0.0.1:5000/weather`
+    var weatherURL = `http://localhost:5000/weather`
     if ((location != undefined) && (location != "")) weatherURL = weatherURL + "?location="+ location;
     fetch(weatherURL)
       .then(res => {
@@ -117,7 +117,7 @@ class Weather extends React.Component {
                   </div>
                   <div className="col-sm-6">
                     <p className="card-text">{this.getWindSpeedIcon(weather.wind.speed)} </p>
-                    <p className="card-text">{weather.wind.speed}km/h   </p>
+                    <p className="card-text">{weather.wind.speed.toFixed(2)}km/h   </p>
 
                   </div>
                 </div>
@@ -140,7 +140,6 @@ class Weather extends React.Component {
 
 
             </div>
-            <p className="text-small">Weather from: {weather.source}</p>
           </div>
         </div>
       )

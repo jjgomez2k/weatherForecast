@@ -37,11 +37,7 @@ class LocationSetter extends React.Component {
                                     Set Location
                                     </button>
                     </div>
-                </div>
-            
-            
-             
-           
+                </div>            
           </div>
         );
     }

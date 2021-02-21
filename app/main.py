@@ -28,11 +28,9 @@ def getWeather():
     location = request.args.get("location", None)
     return lookupWeather(location)
 
-
 def main():
     """Main entry point for server"""
-    #hostname = os.getenv('FLASK_HOST')
-    hostname = os.getenv('0.0.0.0')
+    hostname = os.getenv('FLASK_HOST')
     hostname = '127.0.0.1' if hostname is None else hostname
     print('Running on %s'%(hostname))
     app.run(host=hostname)

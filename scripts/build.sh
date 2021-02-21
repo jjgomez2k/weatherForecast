@@ -13,5 +13,6 @@ npm build
 cd -
 
 #Build the Docker image
-image="weatherforecast"
-docker build --network=host -t ${image}:latest ..
+#image="weatherforecast"
+#docker build --network=host -t ${image}:latest ..
+docker-compose build
