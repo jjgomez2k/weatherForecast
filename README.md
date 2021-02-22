@@ -30,9 +30,8 @@ and React (on port 3000). Head over to
 
     http://localhost:3000/ 
     
-to view an incredibly underwhelming React webpage listing two fruits and their
-respective prices. 
-Though the apparent result is underwhelming, this data was retrieved through an API call
+to view a simple React webpage to view the weather broadcast of a city.
+Though the apparent result is simple, this data was retrieved through an API call
  to our Flask server, which can be accessed at
 
     http://localhost:5000/weather
